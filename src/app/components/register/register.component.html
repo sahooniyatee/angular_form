@@ -1,5 +1,6 @@
-<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
-  <mat-card class="box">
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center center">
+  <div class="bx">
+  <mat-card >
     <mat-card-header>
       <mat-card-title>Register</mat-card-title>
     </mat-card-header>
@@ -7,16 +8,26 @@
     <form class="example-form">
 
       <mat-card-content>
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Username">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label>Full Name
+          </mat-label>
+          <input matInput placeholder="Full Name">
+          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+          <!-- <mat-hint>Hint</mat-hint> -->
         </mat-form-field>
-
-        <mat-form-field class="example-full-width">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label>Email
+          </mat-label>
           <input matInput placeholder="Email">
+          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+          <!-- <mat-hint>Hint</mat-hint> -->
         </mat-form-field>
-
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Password">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label>Phone Number
+          </mat-label>
+          <input matInput placeholder="Phone Number">
+          <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+          <!-- <mat-hint>Hint</mat-hint> -->
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
@@ -29,8 +40,11 @@
 
       </mat-card-content>
 
-      <button mat-stroked-button color="accent" class="btn-block">Register</button>
+      <button mat-flat-button color="primary" class="btn-block">Register</button><br><br>
+      <p>If You are a Exiting User Then <a routerLink="login" color="accent" routerLinkActive="active"><b>Login</b></a>
+      </p>
 
     </form>
   </mat-card>
+</div>
 </div>

@@ -15,10 +15,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 /* Angular Flex Layout */
 import { FlexLayoutModule } from "@angular/flex-layout";
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
 
 /* Components */
 import { LogInComponent } from './components/log-in/log-in.component';
 import { RegisterComponent } from './components/register/register.component';
+import {UserDashModule} from './user-dash/user-dash.module';
 
 
 @NgModule({
@@ -36,7 +39,12 @@ import { RegisterComponent } from './components/register/register.component';
     AngularMaterialModule,
     ReactiveFormsModule,
     FormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatToolbarModule,
+    MatIconModule,
+    UserDashModule,
+
+    
   ],
   providers: [],
   bootstrap: [AppComponent],

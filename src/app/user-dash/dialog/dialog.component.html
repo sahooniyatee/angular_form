@@ -1,0 +1,142 @@
+<!--<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+  </button>
+  <mat-horizontal-stepper linear #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup"> 
+        <ng-template matStepLabel>Fill out your name</ng-template>
+        <mat-form-field appearance="fill">
+           <mat-label>Name</mat-label> 
+          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form> 
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+       <form [formGroup]="secondFormGroup"> 
+        <mat-form-field appearance="fill">
+          <mat-label>Address</mat-label>
+          <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                 required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+       </form> 
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>-->
+
+<mat-horizontal-stepper class="example-full-width" labelPosition="bottom" >
+  <mat-step [stepControl]="firstFormGroup">
+
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Information Details</ng-template>
+      <mat-form-field class="example-full-width">
+        <mat-label>Enter Full Nmae</mat-label>
+        <input formControlName="firstCtrl" type="text" matInput placeholder="Full Name" value="" required>
+      </mat-form-field><br>
+      <mat-form-field class="example-full-width">
+        <mat-label>Enter Email</mat-label>
+        <input formControlName="secondCtrl" type="email" matInput placeholder="enter your user mail" value="" required>
+      </mat-form-field><br>
+      <mat-form-field class="example-full-width">
+        <mat-label>Phone Number</mat-label>
+        <input formControlName="thirdCtrl" type="number" matInput placeholder="enter your Number" value="" required>
+      </mat-form-field><br>
+      <mat-form-field class="example-full-width">
+        <mat-label>Enter DOB</mat-label>
+        <input formControlName="fourthCtrl" type="date" matInput placeholder="enter your Date of Birth" value="" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width" >
+        <mat-label >Gender</mat-label>
+        <mat-select formControlName="fiveCtrl" required>
+          <mat-option value="Male">Male</mat-option>
+          <mat-option value="FeMale">FeMale</mat-option>
+          <mat-option value="others">others</mat-option>
+        </mat-select>
+      </mat-form-field><br>
+    
+      <mat-form-field class="example-full-width">
+        <mat-label>Enter Your Adhar Number</mat-label>
+        <input formControlName="sixCtrl" type="number" matInput placeholder="enter your Date of Birth" value="" required />
+      </mat-form-field>
+
+
+      <div>
+        <div>
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
+        </div>
+      </div>
+
+
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" optional>
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Bank Account Details</ng-template>
+      <mat-form-field class="example-full-width">
+        <mat-label>Enter Account Number</mat-label>
+        <input formControlName="firstoneCtrl" type="number" matInput placeholder="enter your Account Number" value="" required>
+      </mat-form-field><br>
+      <mat-form-field class="example-full-width">
+        <mat-label>Enter IFSC code</mat-label>
+        <input formControlName="secondoneCtrl" type="number" matInput placeholder="enter your Ifsc Code" value="" required>
+      </mat-form-field><br>
+      <mat-form-field class="example-full-width">
+        <mat-label>Enter Branch Name</mat-label>
+        <input formControlName="thirdoneCtrl" type="text" matInput placeholder="enter your Branch Name" value="" required>
+      </mat-form-field><br>
+
+
+      <div>
+
+        <button mat-button matStepperPrevious>Previous</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+      <!-- <button mat-button matStepperNext>Next</button> -->
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="thirdFormGroup" optional>
+    <form [formGroup]="thirdFormGroup">
+
+      <ng-template matStepLabel>Address</ng-template>
+      <mat-form-field class="example-full-width">
+        <mat-label>Enter Permanent Address</mat-label>
+        <input formControlName="firsttwoCtrl" type="text" matInput placeholder="enter your Permanent Address" value="" required>
+      </mat-form-field><br>
+      <mat-form-field class="example-full-width">
+        <mat-label>Enter Temporary Address</mat-label>
+        <input formControlName="secondtwoCtrl" type="text" matInput placeholder="enter Temporary Address" value="" required>
+      </mat-form-field><br>
+      
+
+
+      <div>
+
+        <button mat-button matStepperPrevious>Previous</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <p>You are now done.</p>
+    <div mat-dialog-action [align]="'end'">
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-raised-button color="primary" mat-dialog-close (click)="addUser()">Save</button>
+    </div>
+  </mat-step>
+
+</mat-horizontal-stepper>
